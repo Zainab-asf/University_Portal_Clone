@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Assignment</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            height: 100vh;
+        }
+        h2 {
+            color: #333;
+            margin: 20px 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .upload-container {
+            background-color: white;
+            border: 2px solid #00509d;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Fixed width for the upload container */
+            text-align: center; /* Center text */
+        }
+        input[type="file"] {
+            font-size: 15px;
+            margin: 10px 0;
+            padding: 8px; /* Added padding for spacing */
+            background-color: #e8f0fe; /* Custom background color */
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .button-container {
+            display: flex; /* Use flexbox for button alignment */
+            justify-content: space-between; /* Space between buttons */
+            margin-top: 10px; /* Space above the buttons */
+        }
+        input[type="submit"], input[type="button"] {
+            background-color: #00509d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+            flex: 1; /* Equal space for buttons */
+            margin: 0 5px; /* Space between buttons */
+        }
+        
+        input[type="submit"]:hover, 
+        input[type="button"]:hover {
+            background-color: #003f7f; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>Upload Your Assignment</h2>
+    <div class="upload-container">
+        <form action="" method="post" enctype="multipart/form-data">
+            <input type="file" name="assignment" required>
+            <div class="button-container">
+                <input type="submit" value="Upload Assignment">
+                <input type="button" value="Cancel">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

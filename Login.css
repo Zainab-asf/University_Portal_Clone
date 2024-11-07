@@ -1,0 +1,135 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #79b6f3;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.Wrapper {
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+
+}
+
+.Wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+
+}
+
+.Wrapper .InputBox {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0px;
+
+}
+
+.InputBox input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px ;
+
+}
+.InputBox input::placeholder
+{
+
+    color: #fff;
+}
+
+.InputBox i
+{
+position: absolute;
+right: 20px;
+top: 50%;
+transform: translateY(-50%);
+font-size: 20px;
+}
+
+.Wrapper .Remember-Forget
+{
+display: flex;
+justify-content: space-between;
+font-size: 14.5px;
+margin: -15px 0px 15px;
+
+}
+
+.Remember-Forget label input
+{
+accent-color: #fff;
+margin: 3px;
+
+}
+
+.Remember-Forget a
+{
+ color: #fff;
+text-decoration: none;
+
+}
+.Remember-Forget a:hover
+{
+text-decoration: underline;
+
+}
+
+.Wrapper .Button
+{
+width: 100%;
+height: 45px;
+background: #fff;
+border: none;
+outline: none;
+border-radius: 40px;
+box-shadow: 0px 0px 10px rgba (0,0,0,0.1);
+cursor: pointer;
+font-size: 16px;
+color: #333;
+font-weight: 600;
+
+}
+
+.Wrapper .Register-Link
+{
+font-size: 14.5px;
+text-align: center;
+margin: 20px 0px 15px;
+
+}
+
+.Register-Link p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.Register-Link p a:hover
+{
+    text-decoration: underline;
+}

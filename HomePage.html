@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frame1</title>
+    
+    <!-- Font Awesome Script for Icons -->
+    <script src="https://kit.fontawesome.com/18443bfa0b.js" crossorigin="anonymous"></script>
+    
+    <style>
+        /* Basic Styles for Body */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(138, 210, 90);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Styling */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #00509d;
+            color: white;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            border-bottom: 5px solid #01244d;
+            z-index: 1000;
+        }
+
+        /* Footer Styling */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #00509d;
+            color: white;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 0.9rem;
+            border-top: 5px solid #01244d;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        /* Sidebar and Content Container */
+        .container {
+            display: flex;
+            flex: 1;
+            padding-top: 80px;
+            padding-bottom: 50px;
+            box-sizing: border-box;
+        }
+
+        /* Sidebar Styling */
+        #sidebar {
+            width: 15%;
+            padding: 10px;
+            background-color: #f4f4f9;
+            box-sizing: border-box;
+            border-right: 5px solid #00509d;
+        }
+
+        /* Content Styling */
+        #content {
+            width: 85%;
+            height: 100vh;
+            padding: 0%;
+            margin: 0%;
+            background-color: #fefee3;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            overflow: hidden;
+            height: auto;
+        }
+
+        /* Divs taking up 50% of content height */
+        .upper-content {
+            height: 50%;
+            width: 100%;
+            margin: 0%;
+            padding: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        .lower-content {
+            height: 50%;
+            width: 100%;
+            margin: 0%;
+            padding: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .upper-content object, .lower-content object {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Sidebar Links Styling */
+        .nav-item {
+            background-color: #82b3e0;
+            margin: 10px;
+            padding: 10px;
+            border-top: 4px solid #00509d;
+            border-radius: 10px;
+            text-align: center;
+            color: #fefee3;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fefee3;
+        }
+
+        /* Footer Icon Hover Effect */
+        .footer-icons a:hover {
+            color: #01244d;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Comsats University Islamabad</h1>
+    </header>
+
+    <!-- Main Container with Sidebar and Content -->
+    <div class="container">
+
+        <div id="sidebar">
+            <div class="nav-item"><a href="Dashboard.html" target="content-frame">Dashboard</a></div>
+            <div class="nav-item"><a href="CoursesContent.html" target="content-frame">Courses Content</a></div>
+            <div class="nav-item"><a href="Courses.html" target="content-frame">Courses</a></div>
+            <div class="nav-item"><a href="OnlineClasses.html" target="content-frame">Online Classes</a></div>
+            <div class="nav-item"><a href="QuizMarks.html" target="content-frame">Quiz Marks</a></div>
+            <div class="nav-item"><a href="Assignment.html" target="content-frame">Assignments</a></div>
+            <div class="nav-item"><a href="Scholarships.html" target="content-frame">Scholarships</a></div>
+            <div class="nav-item"><a href="Timetable.html" target="content-frame">Timetable</a></div>
+            <div class="nav-item"><a href="Fee.html" target="content-frame">Fee</a></div>
+            <div class="nav-item"><a href="Result.html" target="content-frame">Result</a></div>
+            <div class="nav-item"><a href="Logout.html" target="content-frame">Log out</a></div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div id="content">
+            <!-- Upper content section with embedded Dashboard.html -->
+            <div class="upper-content">
+                <object data="Dashboard.html" type="text/html"></object>
+            </div>
+            
+            <!-- Lower content section with another object displaying Dashboard.html -->
+            <div class="lower-content">
+                <object name="content-frame" data="Dashboard.html" type="text/html"></object>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div>© 2024 Comsats University Islamabad</div>
+        <div class="footer-icons">
+            <a href="mailto:info@comsats.edu.pk"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

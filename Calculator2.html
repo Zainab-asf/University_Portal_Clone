@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Theory and Lab Grade Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            font-size: 1.2em;
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            font-size: 1.1em;
+            color: #555;
+            width: 40%;
+            line-height: 2;
+        }
+
+        .input-group input {
+            width: 55%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #0056b3;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 25px;
+            font-size: 1.2em;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .result span {
+            color: #007bff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Combined Theory and Lab Grade Calculator</h1>
+
+        <!-- Theory Section -->
+        <div class="section">
+            <h2>Theory Marks</h2>
+            <div class="input-group">
+                <label for="quiz1">Quiz 1 (15%):</label>
+                <input type="number" id="quiz1Obtained" placeholder="Obtained Marks" min="0">
+                <input type="number" id="quiz1Total" placeholder="Total Marks" min="1">
+            </div>
+            <div class="input-group">
+                <label for="quiz2">Quiz 2 (15%):</label>
+                <input type="number" id="quiz2Obtained" placeholder="Obtained Marks" min="0">
+                <input type="number" id="quiz2Total" placeholder="Total Marks" min="1">
+            </div>
+            <div class="input-group">
+                <label for="assignment1">Assignment 1 (10%):</label>
+                <input type="number" id="assignment1Obtained" placeholder="Obtained Marks" min="0">
+                <input type="number" id="assignment1Total" placeholder="Total Marks" min="1">
+            </div>
+            <div class="input-group">
+                <label for="assignment2">Assignment 2 (10%):</label>
+                <input type="number" id="assignment2Obtained" placeholder="Obtained Marks" min="0">
+                <input type="number" id="assignment2Total" placeholder="Total Marks" min="1">
+            </div>
+            <div class="input-group">
+                <label for="midterm">Midterm (25%):</label>
+                <input type="number" id="midtermObtained" placeholder="Obtained Marks" min="0">
+                <input type="number" id="midtermTotal" placeholder="Total Marks" min="1">
+            </div>
+            <div class="input-group">
+                <label for="final">Final Exam (50%):</label>
+                <input type="number" id="finalObtained" placeholder="Obtained Marks" min="0">
+                <input type="number" id="finalTotal" placeholder="Total Marks" min="1">
+            </div>
+            <div class="input-group">
+                <label for="theoryCredits">Theory Credits:</label>
+                <input type="number" id="theoryCredits" placeholder="Credits" min="0">
+            </div>
+        </div>
+
+        <!-- Lab Section -->
+        <div class="section">
+            <h2>Lab Marks</h2>
+            <div class="input-group">
+                <label for="labAssignment1">Lab Assignment 1 (25% total):</label>
+                <input type="number" id="labAssignment1Obtained" placeholder="Obtained Marks" min="0">
+                <input type="number" id="labAssignment1Total" placeholder="Total Marks" min="1">
+            </div>
+            <div class="input-group">
+                <label for="labAssignment2">Lab Assignment 2 (25% total):</label>
+                <input type="number" id="labAssignment2Obtained" placeholder="Obtained Marks" min="0">
+                <input type="number" id="labAssignment2Total" placeholder="Total Marks" min="1">
+            </div>
+            <div class="input-group">
+                <label for="labMidterm">Lab Midterm (25%):</label>
+                <input type="number" id="labMidtermObtained" placeholder="Obtained Marks" min="0">
+                <input type="number" id="labMidtermTotal" placeholder="Total Marks" min="1">
+            </div>
+            <div class="input-group">
+                <label for="labFinal">Lab Final (50%):</label>
+                <input type="number" id="labFinalObtained" placeholder="Obtained Marks" min="0">
+                <input type="number" id="labFinalTotal" placeholder="Total Marks" min="1">
+            </div>
+            <div class="input-group">
+                <label for="labCredits">Lab Credits:</label>
+                <input type="number" id="labCredits" placeholder="Credits" min="0">
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button onclick="calculateCombinedGrade()">Calculate Combined Grade</button>
+        </div>
+
+        <div class="result">
+            <h2>Final Combined Grade: <span id="finalCombinedGrade">0.00</span>%</h2>
+        </div>
+    </div>
+
+    <script>
+        function calculateCombinedGrade() {
+            // Theory calculations
+            const quiz1Obtained = parseFloat(document.getElementById("quiz1Obtained").value) || 0;
+            const quiz1Total = parseFloat(document.getElementById("quiz1Total").value) || 1;
+            const quiz2Obtained = parseFloat(document.getElementById("quiz2Obtained").value) || 0;
+            const quiz2Total = parseFloat(document.getElementById("quiz2Total").value) || 1;
+            const assignment1Obtained = parseFloat(document.getElementById("assignment1Obtained").value) || 0;
+            const assignment1Total = parseFloat(document.getElementById("assignment1Total").value) || 1;
+            const assignment2Obtained = parseFloat(document.getElementById("assignment2Obtained").value) || 0;
+            const assignment2Total = parseFloat(document.getElementById("assignment2Total").value) || 1;
+            const midtermObtained = parseFloat(document.getElementById("midtermObtained").value) || 0;
+            const midtermTotal = parseFloat(document.getElementById("midtermTotal").value) || 1;
+            const finalObtained = parseFloat(document.getElementById("finalObtained").value) || 0;
+            const finalTotal = parseFloat(document.getElementById("finalTotal").value) || 1;
+            const theoryCredits = parseFloat(document.getElementById("theoryCredits").value) || 0;
+
+            // Quiz Weight (15% combined for Quiz 1 and Quiz 2)
+            const quizWeight = (((quiz1Obtained / quiz1Total) + (quiz2Obtained / quiz2Total)) / 2) * 15;
+
+            // Assignment Weight (10% combined for Assignment 1 and Assignment 2)
+            const assignmentWeight = (((assignment1Obtained / assignment1Total) + (assignment2Obtained / assignment2Total)) / 2) * 10;
+
+            // Midterm Weight (25%)
+            const midtermWeight = (midtermObtained / midtermTotal) * 25;
+
+            // Final Exam Weight (50%)
+            const finalWeight = (finalObtained / finalTotal) * 50;
+
+            // Total Theory Marks Calculation
+            const theoryTotal = quizWeight + assignmentWeight + midtermWeight + finalWeight;
+
+            // Lab Calculations (assumed structure follows similarly for the lab section)
+            const labAssignment1Weight = (((labAssignment1Obtained / labAssignment1Total) + (labAssignment2Obtained / labAssignment2Total)) / 2) * 25;
+            const labMidtermWeight = (labMidtermObtained / labMidtermTotal) * 25;
+            const labFinalWeight = (labFinalObtained / labFinalTotal) * 50;
+
+            const labTotal = labAssignment1Weight + labMidtermWeight + labFinalWeight;
+
+            // Combined Grade Calculation (weighted by theory and lab credits)
+            const combinedGrade = ((theoryTotal * theoryCredits) + (labTotal * labCredits)) / (theoryCredits + labCredits);
+
+            // Display the result
+            document.getElementById("finalCombinedGrade").innerText = combinedGrade.toFixed(2);
+        }
+    </script>
+</body>
+</html>

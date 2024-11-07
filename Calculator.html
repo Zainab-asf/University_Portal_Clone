@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weighted Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            width: 400px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 48%;
+            padding: 8px;
+            font-size: 1em;
+            display: inline-block;
+        }
+        .result {
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .result h2 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weighted Grade Calculator</h1>
+
+        <div class="input-group">
+            <label for="quiz1">Quiz 1 (15%):</label>
+            <input type="number" id="quiz1Obtained" placeholder="Obtained Marks" min="0">
+            <input type="number" id="quiz1Total" placeholder="Total Marks" min="1">
+        </div>
+        <div class="input-group">
+            <label for="quiz2">Quiz 2 (15%):</label>
+            <input type="number" id="quiz2Obtained" placeholder="Obtained Marks" min="0">
+            <input type="number" id="quiz2Total" placeholder="Total Marks" min="1">
+        </div>
+        <div class="input-group">
+            <label for="assignment1">Assignment 1 (10%):</label>
+            <input type="number" id="assignment1Obtained" placeholder="Obtained Marks" min="0">
+            <input type="number" id="assignment1Total" placeholder="Total Marks" min="1">
+        </div>
+        <div class="input-group">
+            <label for="assignment2">Assignment 2 (10%):</label>
+            <input type="number" id="assignment2Obtained" placeholder="Obtained Marks" min="0">
+            <input type="number" id="assignment2Total" placeholder="Total Marks" min="1">
+        </div>
+        <div class="input-group">
+            <label for="midterm">Midterm (25%):</label>
+            <input type="number" id="midtermObtained" placeholder="Obtained Marks" min="0">
+            <input type="number" id="midtermTotal" placeholder="Total Marks" min="1">
+        </div>
+        <div class="input-group">
+            <label for="final">Final Exam (50%):</label>
+            <input type="number" id="finalObtained" placeholder="Obtained Marks" min="0">
+            <input type="number" id="finalTotal" placeholder="Total Marks" min="1">
+        </div>
+
+        <button onclick="calculateGrade()">Calculate Final Grade</button>
+
+        <div class="result">
+            <h2>Final Grade: <span id="finalGrade">0.00</span>%</h2>
+        </div>
+    </div>
+
+    <script>
+        function calculateGrade() {
+            // Get obtained and total marks input values
+            const quiz1Obtained = parseFloat(document.getElementById("quiz1Obtained").value) || 0;
+            const quiz1Total = parseFloat(document.getElementById("quiz1Total").value) || 1;
+            const quiz2Obtained = parseFloat(document.getElementById("quiz2Obtained").value) || 0;
+            const quiz2Total = parseFloat(document.getElementById("quiz2Total").value) || 1;
+
+            const assignment1Obtained = parseFloat(document.getElementById("assignment1Obtained").value) || 0;
+            const assignment1Total = parseFloat(document.getElementById("assignment1Total").value) || 1;
+            const assignment2Obtained = parseFloat(document.getElementById("assignment2Obtained").value) || 0;
+            const assignment2Total = parseFloat(document.getElementById("assignment2Total").value) || 1;
+
+            const midtermObtained = parseFloat(document.getElementById("midtermObtained").value) || 0;
+            const midtermTotal = parseFloat(document.getElementById("midtermTotal").value) || 1;
+
+            const finalObtained = parseFloat(document.getElementById("finalObtained").value) || 0;
+            const finalTotal = parseFloat(document.getElementById("finalTotal").value) || 1;
+
+            // Calculate weighted contributions
+            const quizWeight = (((quiz1Obtained / quiz1Total) + (quiz2Obtained / quiz2Total)) / 2) * 15;
+            const assignmentWeight = (((assignment1Obtained / assignment1Total) + (assignment2Obtained / assignment2Total)) / 2) * 10;
+            const midtermWeight = (midtermObtained / midtermTotal) * 25;
+            const finalWeight = (finalObtained / finalTotal) * 50;
+
+            // Calculate final grade
+            const finalGrade = (quizWeight + assignmentWeight + midtermWeight + finalWeight).toFixed(2);
+
+            // Display result
+            document.getElementById("finalGrade").innerText = finalGrade;
+        }
+    </script>
+</body>
+</html>

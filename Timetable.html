@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable</title>
+    <style>
+        body {
+            display: flex; /* Enable flexbox */
+            flex-direction: column; /* Align items in a column */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            height: 100vh; /* Use full viewport height */
+        }
+        .container {
+            width:70%;                   
+            padding: 20px; /* Added padding for spacing */
+
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            height: 50%;  
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+        th, td {
+            border: 1px solid #aeafb0;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #00509d;
+            color: white;
+        }
+        tr:nth-child(even)
+        {
+            background-color: #f4f4f9;
+        }
+        tr:nth-child(odd)
+        {
+            background-color: #d9dadb;
+        }
+    
+       
+    </style>
+</head>
+<body>
+    <h2>Timetable</h2>
+    <div class="container"> 
+        <table>
+            <tr>
+                <th scope="col">Day/Period</th>
+                <th scope="col">I <br> 09:30-10:20</th>
+                <th scope="col">II <br> 10:20-11:10</th>
+                <th scope="col">III <br> 11:10-12:00</th>
+                <th scope="col">12:00-12:40</th>
+                <th scope="col">IV <br> 12:40-01:30</th>
+                <th scope="col">V <br> 01:30-02:20</th>
+                <th scope="col">VI <br> 02:20-03:10</th>
+                <th scope="col">VII <br> 03:10-04:00</th>
+            </tr>
+
+            <tr>
+                <th scope="row">Monday</th>
+                <td>English</td>
+                <td>Math</td>
+                <td>Chemistry</td>
+                <td rowspan="6"><b>L<br>U<br>N<br>C<br>H</b></td>
+                <td colspan="3">LAB</td>
+                <td>Physics</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Tuesday</th>
+                <td colspan="3">LAB</td>
+                <td>English</td>
+                <td>Chemistry</td>
+                <td>Math</td>
+                <td>SPORTS</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Wednesday</th>
+                <td>Math</td>
+                <td>Physics</td>
+                <td>English</td> 
+                <td>Chemistry</td>
+                <td colspan="3">LIBRARY</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Thursday</th>
+                <td>Physics</td>
+                <td>English</td>
+                <td>Chemistry</td>
+                <td colspan="3">LAB</td>
+                <td>Math</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Friday</th>
+                <td colspan="3">LAB</td>
+                <td>Math</td>
+                <td>Chemistry</td>
+                <td>English</td>
+                <td>Physics</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Saturday</th>
+                <td>English</td>
+                <td>Chemistry</td>
+                <td>Math</td>
+                <td colspan="3">SEMINAR</td>
+                <td>SPORTS</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
